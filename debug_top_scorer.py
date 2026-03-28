@@ -17,7 +17,7 @@ if len(scores) == 0:
     print("No scores recorded.")
 else:
     top_name = ""
-    top_score = -1
+    top_score = None
     for name in scores:
         if scores[name] < top_score:
             top_score = scores[name]
