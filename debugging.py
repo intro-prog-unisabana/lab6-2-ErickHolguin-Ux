@@ -21,6 +21,7 @@ def update_stock(inventory):
     if fruit in inventory:
         amount = input(f"Enter amount to add to {fruit}'s stock: ")
         # ¿Es esta operación válida?
+        amount = int(amount)
         inventory[fruit] += amount
         print(f"{fruit} stock increased by {amount}.")
     else:
