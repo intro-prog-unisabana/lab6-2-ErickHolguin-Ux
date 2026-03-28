@@ -19,7 +19,7 @@ else:
     top_name = ""
     top_score = None
     for name in scores:
-        if scores[name] > top_score:
+        if top_score is None or scores[name] > top_score:
             top_score = scores[name]
             top_name = name
     print(f"Top scorer: {top_name} with {top_score} points.")
