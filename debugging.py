@@ -8,12 +8,12 @@ def show_inventory(inventory):
 def add_fruit(inventory):
     fruit = input("Enter the name of the new fruit: ").strip()
     if fruit in inventory.keys():
-        print(f"{fruit} already exists!\n")
+        print(f"{fruit} already exists!")
     else:
         stock = input(f"Enter stock for {fruit}: ")
         # Algo está mal con la sintaxis aquí...
         inventory[fruit] = int(stock)
-        print(f"{fruit} added with stock {stock}.\n")
+        print(f"{fruit} added with stock {stock}.")
 
 def update_stock(inventory):
     fruit = input("Enter the name of the fruit to update: ").strip()
@@ -22,9 +22,9 @@ def update_stock(inventory):
         amount = input(f"Enter amount to add to {fruit}'s stock: ")
         # ¿Es esta operación válida?
         inventory[fruit] += amount
-        print(f"{fruit} stock increased by {amount}.\n")
+        print(f"{fruit} stock increased by {amount}.")
     else:
-        print(f"{fruit} is not in inventory. Use option 2 to add it.\n")
+        print(f"{fruit} is not in inventory. Use option 2 to add it.")
 
 def menu():
     print("Options:")
@@ -58,7 +58,7 @@ def run_program():
             print("Goodbye!")
             break
         else:
-            print("Invalid option. Please choose 1, 2, 3, or 4.\n")
+            print("Invalid option. Please choose 1, 2, 3, or 4.")
   
 if __name__ == "__main__":
     run_program()
