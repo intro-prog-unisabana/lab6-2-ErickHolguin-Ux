@@ -59,9 +59,9 @@ def get_students(student_grades, keys):
     return result
 
 def avg_by_student(student_grades, keys=None):
-   
     if keys is None:
         selected = student_grades
+        
     else:
         lower_map = {name.lower(): name for name in student_grades.keys()}
         selected = {}
