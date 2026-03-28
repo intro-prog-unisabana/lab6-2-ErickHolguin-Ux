@@ -21,26 +21,25 @@ def initialize_dict(student_name, subject_grades):
 def add_student(student_grades=None):
     if student_grades is None:
         student_grades = {}
-    
-    student_name = input("Enter student name: ").strip().title()
 
+    student_name = input("Enter student name: ").strip().title()
     subjects = {}
+
     while True:
         entry = input("Enter subject and grade (or 'exit' to finish): ").strip()
         if entry.lower() == "exit":
             break
-        
-        grade_str = input(f"Enter grade for {subject}: ").strip()
+        if "," in entry:
+            subject, grade_str = entry.split(",", 1)
+            subject = subject.strip().title()
+            grade = float(grade_str.strip())
+            subjects[subject] = grade
 
-        if grade_str.replace(".", "", 1).isdigit():
-            grade = float(grade_str)
-            subjects[subject.title()] = grade
-        else:
-            print("Grade must be numeric. Try again.")
-
+    # Aquí, fuera del while
     student_grades[student_name] = subjects
     print(f"Student {student_name} successfully added to the grades management system.")
     return student_grades
+
 
 def get_students(student_grades, keys):
    
